@@ -39,7 +39,7 @@ public class ServiceGovernmentBFP {
 		if(act == null) {
 			throw new Exception("No se pudo registrar");
 		}
-		return act;
+		return governmentBFPRep.save(act);
 	}
 	
 	@Transactional(rollbackFor = Exception.class)

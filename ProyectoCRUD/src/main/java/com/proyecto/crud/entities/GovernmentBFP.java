@@ -23,7 +23,7 @@ public class GovernmentBFP implements Serializable {
 	private String category;
 	private String item;
 	private int amount;
-	private int percentOfGdp;
+	private double percentOfGdp;
 	
 	
 	public Long getId() {
@@ -62,15 +62,15 @@ public class GovernmentBFP implements Serializable {
 	public void setAmount(int amount) {
 		this.amount = amount;
 	}
-	public int getPercentOfGdp() {
+	public double getPercentOfGdp() {
 		return percentOfGdp;
 	}
-	public void setPercentOfGdp(int percentOfGdp) {
+	public void setPercentOfGdp(double percentOfGdp) {
 		this.percentOfGdp = percentOfGdp;
 	}
 	
 	public GovernmentBFP(Long id, int yearOfBalance, String state, String category, String item, int amount,
-			int percentOfGdp) {
+			double percentOfGdp) {
 		super();
 		this.id = id;
 		this.yearOfBalance = yearOfBalance;
@@ -79,6 +79,10 @@ public class GovernmentBFP implements Serializable {
 		this.item = item;
 		this.amount = amount;
 		this.percentOfGdp = percentOfGdp;
+	}
+	public GovernmentBFP() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 	
 	
