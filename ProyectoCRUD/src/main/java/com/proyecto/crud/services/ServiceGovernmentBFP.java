@@ -19,6 +19,10 @@ public class ServiceGovernmentBFP {
 		return governmentBFPRep.findAll();		
 	}
 	
+	public List<GovernmentBFP> filterGovernmentBFP(String f){
+		return governmentBFPRep.filterBy(f);		
+	}
+	
 	public GovernmentBFP searchGovernmentBFP(Long id) throws Exception {
 		GovernmentBFP act = governmentBFPRep.findById(id).get();
 		if(act == null) {
@@ -26,6 +30,8 @@ public class ServiceGovernmentBFP {
 		}
 		return act;
 	}
+	
+	
 	
 	@Transactional(rollbackFor = Exception.class)
 	public GovernmentBFP updateGovernment(GovernmentBFP gInput) throws Exception {

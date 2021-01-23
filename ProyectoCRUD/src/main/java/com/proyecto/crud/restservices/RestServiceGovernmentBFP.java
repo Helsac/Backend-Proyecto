@@ -30,6 +30,11 @@ public class RestServiceGovernmentBFP {
 		return governmentBFPServ.listGovernmentBFP();
 	}
 	
+	@GetMapping("/govBFP/filter/{f}")
+	public List<GovernmentBFP> filterGovBFP(@PathVariable(value ="f") String filter){
+		return governmentBFPServ.filterGovernmentBFP(filter);
+	}
+	
 	
 	@GetMapping("/govBFP/{id}")
 	public GovernmentBFP findGovBFP(@PathVariable(value ="id") Long id) {
@@ -41,6 +46,8 @@ public class RestServiceGovernmentBFP {
 		}
 		return act;
 	}
+	
+	
 	
 	
 	@PostMapping("/govBFP")
