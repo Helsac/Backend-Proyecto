@@ -26,9 +26,13 @@ public class ServiceGovernmentBFP {
 		}
 		return act;
 	}
+	
 	@Transactional(rollbackFor = Exception.class)
 	public GovernmentBFP updateGovernment(GovernmentBFP gInput) throws Exception {
-		governmentBFPRep.findById(gInput.getId()).orElseThrow(() -> new Exception("No se encontró"));
+		GovernmentBFP act = governmentBFPRep.findById(gInput.getId()).get();
+		if(act == null) {
+			throw new Exception("No se encontró");
+		}
 		return governmentBFPRep.save(gInput);
 	}
 	
