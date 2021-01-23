@@ -18,7 +18,7 @@ import com.proyecto.crud.entities.GovernmentBFP;
 import com.proyecto.crud.services.ServiceGovernmentBFP;
 
 @RestController
-@RequestMapping("/govAnual")
+@RequestMapping("/govAnnual")
 public class RestServiceGovernmentBFP {
 	@Autowired
 	private ServiceGovernmentBFP governmentBFPServ;
